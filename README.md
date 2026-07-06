@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Next.js 15 Starter Kit
 
-## Getting Started
+포트폴리오 프로젝트를 빠르게 시작하기 위한 스타터 킷입니다.
 
-First, run the development server:
+## 기술 스택
+
+| 기술 | 버전 | 설명 |
+|------|------|------|
+| Next.js | 15+ | App Router, Server Components |
+| TypeScript | 5+ | 타입 안전성 |
+| Tailwind CSS | v4 | CSS-first 유틸리티 |
+| shadcn/ui | v4 | Base UI 기반 컴포넌트 |
+| react-hook-form | - | 폼 상태 관리 |
+| zod | v4 | 스키마 유효성 검사 |
+| next-themes | - | 다크/라이트 모드 |
+
+## 시작하기
 
 ```bash
+# 레포 클론
+git clone https://github.com/vincentlab7/next-starter-kit
+cd next-starter-kit
+
+# 의존성 설치
+npm install
+
+# 개발 서버 시작
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000) 으로 접속하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 프로젝트 구조
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.tsx              # 루트 레이아웃 (ThemeProvider, Header, Footer)
+│   ├── page.tsx                # 홈 페이지
+│   └── examples/
+│       ├── layout.tsx          # 예제 레이아웃 (사이드바)
+│       ├── forms/page.tsx      # 폼 컴포넌트 예제
+│       └── components/page.tsx # UI 컴포넌트 쇼케이스
+├── components/
+│   ├── ui/                     # shadcn/ui 컴포넌트
+│   ├── layout/                 # 레이아웃 컴포넌트
+│   └── providers/              # Context Providers
+└── lib/
+    └── utils.ts                # 유틸리티 함수
+```
 
-## Learn More
+## 포함된 예제
 
-To learn more about Next.js, take a look at the following resources:
+### 폼 예제 (`/examples/forms`)
+- 로그인 폼 (이메일, 비밀번호, 로그인 유지)
+- 프로필 폼 (Select, Textarea, Checkbox)
+- 연락처 폼 (그리드 레이아웃, 실시간 글자 수 카운트)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+모든 폼은 **react-hook-form + zod**로 유효성 검사를 구현합니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 컴포넌트 쇼케이스 (`/examples/components`)
+- Button (6가지 variant, 4가지 size)
+- Badge, Card, Input
+- Avatar, Skeleton
+- Dialog (모달)
+- DropdownMenu
 
-## Deploy on Vercel
+## 새 컴포넌트 추가
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npx shadcn@latest add [component-name]
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 라이선스
+
+MIT

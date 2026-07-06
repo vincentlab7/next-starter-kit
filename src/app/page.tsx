@@ -35,7 +35,7 @@ const features = [
 ]
 
 const steps = [
-  { step: "1", cmd: "git clone https://github.com/your-id/next-starter-kit", desc: "레포 클론" },
+  { step: "1", cmd: "git clone https://github.com/vincentlab7/next-starter-kit", desc: "레포 클론" },
   { step: "2", cmd: "npm install", desc: "의존성 설치" },
   { step: "3", cmd: "npm run dev", desc: "개발 서버 시작" },
 ]
